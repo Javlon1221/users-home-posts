@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
@@ -33,9 +34,10 @@ const Recipes = () => {
                             </div>
                         ))
                         : displayedRecipes.map((recipe) => (
-                            <div
+                            <Link
+                                to={`/recipes/${recipe.id}`}
                                 key={recipe.id}
-                                className="w-64 border border-gray-200 rounded-lg p-4 bg-white flex flex-col items-center shadow"
+                                className="w-64 border border-gray-200 rounded-lg p-4 bg-white flex flex-col items-center shadow hover:shadow-lg transition text-center no-underline text-black"
                             >
                                 <img
                                     src={recipe.image}
@@ -44,7 +46,7 @@ const Recipes = () => {
                                 />
                                 <h3 className="text-lg font-semibold mb-2">{recipe.name}</h3>
                                 <p className="text-sm text-gray-500">{recipe.cuisine}</p>
-                            </div>
+                            </Link>
                         ))}
                 </div>
                 {!showAll && !loading && recipes.length > 6 && (
@@ -60,5 +62,6 @@ const Recipes = () => {
             </div>
         </div>
     );
-}
+};
+
 export default Recipes;

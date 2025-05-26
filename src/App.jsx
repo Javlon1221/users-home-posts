@@ -10,6 +10,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import DetailPage from "./components/deatil-pages/DeatilPages.";
 
 const App = () => {
   return (
@@ -19,11 +20,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:id" element={<DetailPage />} />
           <Route path="/users" element={<Users />} />
           <Route path="/post" element={<Posts />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
       </main>
       <Footer />
     </Router>
