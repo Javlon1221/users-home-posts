@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   const location = useLocation();
 
-  if (location.pathname === "/login") return null;
+  if (location.pathname === "/login"  || location.pathname === "/dashboard") return null;
 
 const isRecipes = location.pathname === "/recipes";
 return (
@@ -70,6 +70,17 @@ return (
                         }`}
                     >
                         Login
+                    </Link>
+                </li>
+                
+                <li>
+                    <Link
+                        to="/dashboard"
+                        className={`hover:underline ${
+                            location.pathname === "/dashboard" ? "text-green-500 font-semibold" : ""
+                        }`}
+                    >
+                        admin
                     </Link>
                 </li>
             </ul>
