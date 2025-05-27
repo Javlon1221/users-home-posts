@@ -19,6 +19,7 @@ import GraduatedStudent from "./components/dashboard/student/GraduatedStudent";
 import DetailPage from "./components/deatil-pages/DeatilPages."; // <-- tuzatilgan
 import Admin from "./components/dashboard/admin/Admin";
 import Products from "./components/dashboard/products/Products";
+import PostsId from "./components/dashboard/posts/Posts";
 
 const InnerLayout = ({ children }) => (
   <div className="flex min-h-screen">
@@ -39,7 +40,6 @@ const App = () => {
           <Route path="/post" element={<Posts />} />
           <Route path="/login" element={<Login />} />
 
-          {/* Dashboard routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Group />} />
             <Route path="student" element={<Student />}>
@@ -50,6 +50,7 @@ const App = () => {
             <Route path="profile" element={<Profile />} />
             <Route path="admin" element={<Admin/>} />
             <Route path="products" element={<Products/>} />
+            <Route path="posts" element={<PostsId/>} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

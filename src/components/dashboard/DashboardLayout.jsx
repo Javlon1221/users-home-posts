@@ -43,6 +43,12 @@ const Dashboard = () => {
                     `block mb-1 p-2 rounded sidebar-link ${isActive ? 'active' : ''}`
                   }
                 >Product</NavLink>
+                <NavLink 
+                  to="Posts" 
+                  className={({ isActive }) => 
+                    `block mb-1 p-2 rounded sidebar-link ${isActive ? 'active' : ''}`
+                  }
+                >Posts</NavLink>
 
 
                 <button 
